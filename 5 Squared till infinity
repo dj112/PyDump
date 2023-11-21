@@ -1,0 +1,20 @@
+initial = 5
+var = True
+
+while var:
+    squared_number = initial ** 2
+    if initial == squared_number:
+        var = False
+    print(squared_number)
+    str_initial = str(initial)
+    sq_str = str(squared_number)
+    if str_initial in sq_str:
+        initial = squared_number
+    else:
+        length = len(str_initial)
+        for i in range(0, length, 1):
+            if str_initial[i:] in sq_str[length:]:
+                arb = int(str_initial[i:])
+                print(type(arb))
+                initial = arb
+                break
